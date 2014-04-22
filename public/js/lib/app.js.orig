@@ -1,0 +1,32 @@
+angular.module("todo", ["ionic"])
+
+.controller("TodoCtrl", function($scope, Modal) {
+    $scope.tasks = [
+      {title: "static task"}
+    ];
+
+    //create and load the Modal
+    Modal.fromTemplateUrl("new-task.html", function(modal) {
+        $scope.taskModal = modal;
+    }, {
+        scope: $scope,
+        animation: "slide-in-up"
+    });
+
+    //when the form is submitted
+    $scope.createTask = function(task) {
+        $scope.tasks.push(task);
+	console.log("fay: task length " + $scope.tasks.length);
+        this.closeNewTask();
+    };
+
+    //open the new task modal
+    $scope.newTask = function() {
+        $scope.taskModal.show();
+    };
+    
+    //close the new task modal
+    $scope.closeNewTask = function() {
+        $scope.taskModal.hide();
+    };
+});
