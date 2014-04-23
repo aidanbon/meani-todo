@@ -5,7 +5,6 @@
 var routes = function (app, task) {
     app.route('/')
         .get(function (req, res, next) {
-            //fay: res.render("index", {title: "Hello World"});
             res.render("index");
         });
 

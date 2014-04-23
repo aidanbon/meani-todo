@@ -43,7 +43,6 @@ Task.prototype.updateCompleted = function (id, isCompleted, phone2IM, cb) {
                         {mesg: "Your task '" + result.title + "' has been marked as done.",
                          phone2IM: phone2IM});
                 }
-                console.log("---- fay result " + JSON.stringify(result));
                 cb(null, result);
             }
         }

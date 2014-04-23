@@ -123,7 +123,6 @@ angular.module('todoApp', ['ionic'])
    * remove a task
    */
   $scope.deleteTask = function (task, index) {
-    console.log("----- fay: del task at %d [%s]", index, task.title);
     TaskFactory.del(task)
       .success(function(data, status, headers, config){
         $scope.tasks.splice(index, 1);
