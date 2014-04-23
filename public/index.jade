@@ -1,0 +1,88 @@
+doctype html
+html
+  head
+  title i-mean-todo
+  meta(charset="utf-8")
+  meta(name="viewport", content="initial-scale=1, maximum-scale=1, user-scalable=no")
+  link(rel="stylesheet", href="css/lib/ionic/ionic.css")
+  link(rel="stylesheet", href="css/task.css")
+  script(src="js/lib/ionic/ionic.min.js")
+  script(src="js/lib/angular/angular.min.js")
+  script(src="js/lib/angular/angular-animate.min.js")
+  script(src="js/lib/angular/angular-route.min.js")
+  script(src="js/lib/angular/angular-touch.min.js")
+  script(src="js/lib/angular/angular-sanitize.min.js")
+  script(src="js/lib/ionic/ionic-angular.js")
+  script(src="js/task.js")
+
+body(ng-app="todoApp", ng-controller="TaskController")
+  side-menus
+    //- center pane
+    pane(side-menu-content)
+
+      //- center header bar
+      header(class="bar bar-header bar-positive")
+        //- gear button
+        button(class="button button-icon", ng-click="toggleSideMenu()")
+          i(class="icon ion-gear-a")
+        //- app title
+        h1(class="title") My Todo&nbsp;
+          span(class="badge badge-calm") {{tasks.length}}
+        //- edit button
+        button(class="button button-icon", ng-click="showNewTaskForm()")
+          i(class="icon ion-compose")
+  
+      //- center sub-header bar
+      div(class="bar bar-subheader item-input-inset")
+        label(class="item-input-wrapper")
+          i(class="icon ion-ios7-search placeholder-icon")
+          input(ng-model="taskFilter", type="search", placeholder="Search")
+  
+      //- center contents
+      content(has-subheader="true", scroll="false")
+        list
+          item(class="item item-checkbox item-button-right task-done-{{task.done}} task-animation", ng-repeat="task in tasks | filter:taskFilter")
+            label(class="checkbox")
+              input(type="checkbox", ng-model="task.done", ng-click="toggleTaskCompleted(task)")
+            {{task.title}}
+            br
+            span(class="taskBody"){{task.body}}
+            button(class="button button-stable button-clear", ng-click="deleteTask(task, $index)")
+              i(class="icon ion-ios7-trash-outline")
+
+    //- side menu
+    side-menu(side="left")
+
+      //- side header
+      header(class="bar bar-header bar-calm")
+        h1(class="title") Setup
+
+      //- side content
+      content(has-header="true" scroll="false")
+        div(class="task-phone")
+          | Enter a valid 10-digit phone number below to receive an IM whenever a task is marked completed.
+        div(class="list")
+          div(class="item item-input-inset")
+            label(class="item-input-wrapper")
+              input(type="tel", ng-model="taskPhone", placeholder="Phone number")
+            button(class="button button-small", ng-click="addTaskPhone(taskPhone)") Add
+
+    //- modal window template
+    script(id="new-task-form.html", type="text/ng-template")
+      div(class="modal")
+
+        //-- modal header
+        header(class="bar bar-header bar-secondary bar-energized")
+          h1(class="title") New Task
+          button(class="button button-clear button-positive" ng-click="closeNewTaskForm()") X
+  
+        //-- modal content
+        content(has-header="true")
+          form(ng-submit="createTask(task)")
+            div(class="list")
+              label(class="item item-input")
+                input(type="text", placeholder="What do you need to do?", ng-model="task.title")
+              label(class="item item-input")
+                input(type="text", placeholder="More details?", ng-model="task.body")
+            div(class="padding")
+              button(type="submit", class="button button-back button-energized") Create Task
