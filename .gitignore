@@ -2,3 +2,4 @@ node_modules
 fay-*
 test
 todo.txt
+app/configs.js
