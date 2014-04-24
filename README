@@ -1,1 +1,33 @@
-more to come...
+
+==========
+MEANI-todo
+==========
+
+A full stack implementation of a to-do list application with MongoDB, Express, AngularJS, Node and Ionic (MEANI)
+
+
+Major Components:
+- M - MongoDB [http://mongodb.com] - The data persistence layer behind the web server.
+- E - Express [http://expressjs.com] - The web server.
+- A - AngularJS [http://angularjs.org] - The front-end framework that powers the Single Page App.
+- I - Ionic [http://ionicframework.com] - The UI framework on top of Angular
+
+Additional Components:
+- Twilio - [http://twilio.com] - The messaging service.
+- MongoHQ - [http://mongohq.com] - The MongoDB outfitter.
+
+============================================
+Live Demo at http://meani-todo.herokuapp.com
+============================================
+
+To run the app locally:
+  - Clone this repo
+  - Copy app/configs-sample.js to app/config.js
+  - Customize your setting at app/config.js
+
+Known issue:
+-----------
+  - The App is fully tested on Google Chrome browser. 
+    Other browser platforms are not supported yet.
+
+
