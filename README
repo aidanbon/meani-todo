@@ -31,6 +31,8 @@ To run the app locally:
   - Clone this repo
   - Copy app/configs-sample.js to app/config.js
   - Customize your setting at app/config.js
+  - $ npm install
+  - $ node server.js
 
 Known issue:
 -----------
