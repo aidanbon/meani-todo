@@ -1,5 +1,6 @@
 /**
- * configure the app server environment
+ * environment.js
+ * Configure the app server environment
  */
 var bodyParser = require("body-parser"),
     express = require("express"),

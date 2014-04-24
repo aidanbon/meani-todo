@@ -1,7 +1,7 @@
 {
-  "name": "mean-todo",
+  "name": "meani-todo",
   "version": "1.0.0",
-  "description": "A full MEAN stack implementation of a to-do list app",
+  "description": "A full MEAN (with Ionic) implementation of a to-do list app",
   "main": "server.js",
   "scripts": {
     "start" : "NODE_ENV=production node server.js",
@@ -9,7 +9,12 @@
   },
   "keywords": [
     "todo",
-    "express.js"
+    "MEAN",
+    "MongoDB",
+    "AngularJS",
+    "Express.js",
+    "Ionic",
+    "Twilio"
   ],
   "author": "Francis Au-Yeung",
   "license": "BSD",

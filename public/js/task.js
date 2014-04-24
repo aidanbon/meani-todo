@@ -1,5 +1,8 @@
-angular.module('todoApp', ['ionic'])
 /**
+ * task.js
+ */
+angular.module('todoApp', ['ionic'])
+/*
  * The TaskFactory factory handles data persistence
  * and synchronization to the server.
  */

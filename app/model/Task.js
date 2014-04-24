@@ -1,10 +1,14 @@
+/**
+ *  Task.js
+ *  Task object persistency and business operations
+ */
 var mongoskin = require("mongoskin"),
     ObjectID = require("mongoskin").ObjectID,
     events = require("events"),
     util = require("util");
 
 /*
- * Task constructor
+ * constructor
  */
 var Task = function (app) {
     events.EventEmitter.call(this);
@@ -57,7 +61,7 @@ Task.prototype.updateById = function (id, contents, cb) {
     }
     this.db.task.updateById(id, {$set:contents}, {safe:true, multi:false}, function(err, results){
         if (isTaskCompleted(contents)) {
-            thisTask.emit("task:completed", contents.title);
+            thisTask.emit("task:completed", contents.title);  //emit a custom event
         }
         cb(err, results);
     });

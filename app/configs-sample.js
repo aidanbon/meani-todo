@@ -1,6 +1,6 @@
 /**
- *  configs.js
- *  app-wise configuration parameters
+ *  configs-sample.js
+ *  ** Customize for your app-wise configuration parameters **
  */
 module.exports = {
     //default server port
