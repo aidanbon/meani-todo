@@ -26,7 +26,7 @@ angular.module('todoApp', ['ionic'])
       return $http.put(url);
     },
 
-    //
+    // remove a task
     del: function(task) {
       var url = baseUrl + task._id
       console.log("sending delete [%s] URL = %s", task.title, url);
@@ -74,10 +74,10 @@ angular.module('todoApp', ['ionic'])
 
   // ------- user operations --------
   /*
-   *
+   * refresh all tasks
    */
   $scope.refreshTask = function (tastFilter) {
-    taskFilter = ""; //reset filter
+    $scope.taskFilter = ""; //reset filter
     fetchTasks();
   };
 
@@ -85,6 +85,10 @@ angular.module('todoApp', ['ionic'])
    * create a new task
    */
   $scope.createTask = function (task) {
+    if (!task || !task.title.trim()) {
+      alert("Please enter your task information.");
+      return;
+    }
     var newTask = {
       title: task.title,
       body: task.body,
@@ -137,11 +141,16 @@ angular.module('todoApp', ['ionic'])
    */
   $scope.addTaskPhone = function (taskPhone) {
     var ph = taskPhone && taskPhone.trim();
-    window.localStorage["task-phone"] = ph;
-    if (ph) {
-      alert(ph + " added");
+    if (!ph) {
+      alert("Phone number cleared. No IM will be sent.");
+      window.localStorage["task-phone"] = "";
     } else {
-      alert("No IMs will be sent");
+      if (ph.length != 10) {
+        alert("Please enter a 10-digit phone number.");
+      } else {
+        window.localStorage["task-phone"] = ph;
+        alert(ph + " added");
+      }
     }
   };
 
@@ -151,7 +160,7 @@ angular.module('todoApp', ['ionic'])
 
   $scope.closeNewTaskForm = function() {
     $scope.taskModal.hide();
-  }
+  };
 
   $scope.toggleSideMenu = function() {
     $scope.sideMenuController.toggleLeft();
