@@ -74,8 +74,8 @@ Verb |  URI  |   Description  |  Status Code
 POST | /task | Add a task (request body) to the server | 201: success; 500: server error
 GET  | /task | Fetch all tasks | 200: success; 404: no tasks returned; 500: server error
 GET  | /task?title=:title&body=:body | Search for tasks that match title and body | 200: success; 204: no tasks returned; 500: server error
-GET  | /task/:id | Return task that has id | 200: success; 204: no tasks return; 500: server error
+GET  | /task/:id | Return task that has id | 200: success; 204: no tasks returned; 500: server error
 PATCH | /task/:id | Update the task referenced by id with the request body | 204: success; 500: server error
 DELETE | /task/:id | Remove the task referenced by id | 204: success; 500: server error
 PUT | /task/:id/completed | Mark the task referenced by id as completed | 200: success; 500: server error
-PUT | /task/:id/reset | Mark the task referenced by id as not completed | 200: success; 500: server error
+PUT | /task/:id/reset | Mark the task referenced by id as incomplete | 200: success; 500: server error
