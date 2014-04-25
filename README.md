@@ -3,7 +3,8 @@ MEANI-todo
 
 ## A full stack implementation of a to-do application with MongoDB, Express, AngularJS, Node and Ionic (MEANI)
 
-![Screen Shots](./meani-merged.png "Screen shots")
+![Screen Shots](./docs/meani-merged.png "Screen shots")
+
 ### Major Components:
 - **M** : [MongoDB](http://mongodb.com) - The data persistence layer behind the web server.
 - **E** : [Express](http://expressjs.com) - The web server.
@@ -18,7 +19,7 @@ MEANI-todo
 
 
 > :octocat: **Live Demo**: http://meani-todo.herokuapp.com
-(* Best with Chrome browser)
+(* Best with desktop Chrome browser)
 
 
 ### To run the app locally:
