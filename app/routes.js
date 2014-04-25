@@ -24,7 +24,7 @@ var routes = function (app, task) {
                 if (err) {
                     res.status(500).send({error: err});
                 }
-                res.status(result.length>0 ? 200 : 404).send(result);
+                res.status(result.length>0 ? 200 : 204).send(result);
             });
         });
 
@@ -34,7 +34,7 @@ var routes = function (app, task) {
                 if (err) {
                     res.status(500).send({error: err});
                 }
-                res.status(result ? 200 : 404).send(result);
+                res.status(result ? 200 : 204).send(result);
             });
         })
         .patch(function(req, res, next){
