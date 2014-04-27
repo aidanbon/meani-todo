@@ -21,10 +21,9 @@ MEANI-todo
 > :octocat: **Live Demo**: http://meani-todo.herokuapp.com
 (* Best with desktop Chrome browser)
 
-### Known issue:
-
-  - The App is fully tested on desktop Google Chrome browser.
-    Other browser platforms are not supported yet.
+> ### Known issue:
+>  - The App is fully tested on desktop Google Chrome browser.
+>    Other browser platforms are not supported yet.
 
 ### To run the app locally:
   1. Clone this repo
