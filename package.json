@@ -1,6 +1,6 @@
 {
   "name": "meani-todo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A full stack implementation of a to-do list app with MongoDB, Express, AngularJS, Node and Ionic (MEANI)",
   "main": "server.js",
   "scripts": {

@@ -18,12 +18,7 @@ MEANI-todo
 - [Mocha](https://github.com/visionmedia/mocha) - The Javascript test framework.
 
 
-> :octocat: **Live Demo**: http://meani-todo.herokuapp.com
-(* Best with desktop Chrome browser)
-
-> ### Known issue:
->  - The App is fully tested on desktop Google Chrome browser.
->    Other browser platforms are not supported yet.
+> :octocat:  **Live Demo**: http://meani-todo.herokuapp.com
 
 ### To run the app locally:
   1. Clone this repo
@@ -76,3 +71,18 @@ PATCH | /task/:id | Update the task referenced by id with the request body | 204
 DELETE | /task/:id | Remove the task referenced by id | 204: success; 500: server error
 PUT | /task/:id/completed | Mark the task referenced by id as completed | 200: success; 500: server error
 PUT | /task/:id/reset | Mark the task referenced by id as incomplete | 200: success; 500: server error
+
+
+##Change log
+
+###1.1.0 (4/30/2014)
+- Upgraded to ionic version 1.0.9.
+- Test pass on following platforms:
+  - Desktop: Chrome, Firefox and Safari
+  - Android: Chrome
+  - iPhone: Safari
+- Improved phone number validation
+- Refactored index.jade (more compact)
+
+###1.0.0 (4/24/2014)
+- Initial release
