@@ -7,44 +7,40 @@ html
   title meani-todo
   meta(charset="utf-8")
   meta(name="viewport", content="initial-scale=1, maximum-scale=1, user-scalable=no")
-  link(rel="stylesheet", href="css/lib/ionic/ionic.css")
+
+  link(rel="stylesheet", href="lib/ionic/css/ionic.css")
   link(rel="stylesheet", href="css/task.css")
-  script(src="js/lib/ionic/ionic.min.js")
-  script(src="js/lib/angular/angular.min.js")
-  script(src="js/lib/angular/angular-animate.min.js")
-  script(src="js/lib/angular/angular-route.min.js")
-  script(src="js/lib/angular/angular-touch.min.js")
-  script(src="js/lib/angular/angular-sanitize.min.js")
-  script(src="js/lib/ionic/ionic-angular.js")
+
+  script(src="lib/ionic/js/ionic.bundle.js")
   script(src="js/task.js")
 
 body(ng-app="todoApp", ng-controller="TaskController")
-  side-menus
+  ion-side-menus
     //- center pane
-    pane(side-menu-content)
+    ion-side-menu-content
 
       //- center header bar
-      header.bar.bar-header.bar-positive
+      ion-header-bar.bar-positive
         //- gear button
         button.button.button-icon(ng-click="toggleSideMenu()")
           i.icon.ion-gear-a
         //- app title
-        h1.title My Todo&nbsp;
+        h1.title My Todo&nbsp;&nbsp;
           span.badge.badge-calm {{tasks.length}}
         //- edit button
         button.button.button-icon(ng-click="showNewTaskForm()")
           i.icon.ion-compose
 
       //- center sub-header bar
-      .bar.bar-subheader.item-input-inset
+      ion-header-bar.bar-subheader.item-input-inset
         label.item-input-wrapper
           i.icon.ion-ios7-search.placeholder-icon
           input(ng-model="taskFilter", type="search", placeholder="Search")
 
       //- center contents
-      content(has-subheader="true", scroll="false")
-        list
-          item.item.item-checkbox.item-button-right.task-animation(class="task-done-{{task.done}}" ng-repeat="task in tasks | filter:taskFilter")
+      ion-content(has-subheader="true", scroll="false")
+        ion-list
+          ion-item.item.item-checkbox.item-button-right.task-animation(class="task-done-{{task.done}}" ng-repeat="task in tasks | filter:taskFilter")
             label.checkbox
               input(type="checkbox", ng-model="task.done", ng-click="toggleTaskCompleted(task)")
             {{task.title}}
@@ -53,17 +49,17 @@ body(ng-app="todoApp", ng-controller="TaskController")
             button.button.button-stable.button-clear(ng-click="deleteTask(task, $index)")
               i.icon.ion-ios7-trash-outline
 
-    //- side menu
-    side-menu(side="left")
+    //- left side menu
+    ion-side-menu(side="left")
 
       //- side header
-      header.bar.bar-header.bar-calm
+      ion-header-bar.bar-calm
         h1.title Setup
 
       //- side content
-      content(has-header="true" scroll="false")
+      ion-content(has-header="true" scroll="false")
         .task-phone
-          | Enter a valid 10-digit phone number below to receive an IM whenever a task is marked completed.
+          | Enter a valid 10-digit phone number (e.g. 4151236789) below to receive an IM whenever a task is marked completed.
         .list
           .item.item-input-inset
             label.item-input-wrapper
@@ -75,12 +71,12 @@ body(ng-app="todoApp", ng-controller="TaskController")
     .modal
 
       //-- modal header
-      header.bar.bar-header.bar-secondary.bar-energized
+      ion-header-bar.bar-secondary.bar-energized
         h1.title New Task
         button.button.button-clear.button-positive(ng-click="closeNewTaskForm()") X
 
       //-- modal content
-      content(has-header="true")
+      ion-content
         form(ng-submit="createTask(task)")
           .list
             label.item.item-input

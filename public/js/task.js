@@ -41,7 +41,7 @@ angular.module('todoApp', ['ionic'])
 /**
  * The TaskController handles user operations
  */
-.controller('TaskController', function($scope, $timeout, Modal, TaskFactory) {
+.controller('TaskController', function($scope, $timeout, $ionicModal, $ionicSideMenuDelegate, TaskFactory) {
 
   // -------- handy util functions -----------
   var handleNetError = function(errCode, mesg) {
@@ -69,7 +69,7 @@ angular.module('todoApp', ['ionic'])
   $scope.taskPhone = window.localStorage["task-phone"] || "";
 
   // Create our modal
-  Modal.fromTemplateUrl('new-task-form.html', function(modal) {
+  $ionicModal.fromTemplateUrl('new-task-form.html', function(modal) {
     $scope.taskModal = modal;
   }, {
     scope: $scope
@@ -148,7 +148,7 @@ angular.module('todoApp', ['ionic'])
       alert("Phone number cleared. No IM will be sent.");
       window.localStorage["task-phone"] = "";
     } else {
-      if (ph.length != 10) {
+      if (!/^\d{10}$/.test(ph)) {
         alert("Please enter a 10-digit phone number.");
       } else {
         window.localStorage["task-phone"] = ph;
@@ -166,6 +166,6 @@ angular.module('todoApp', ['ionic'])
   };
 
   $scope.toggleSideMenu = function() {
-    $scope.sideMenuController.toggleLeft();
+    $ionicSideMenuDelegate.toggleLeft();
   };
 });
