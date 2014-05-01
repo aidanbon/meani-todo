@@ -33,9 +33,9 @@ Implementation Notes:
 ### File Overview:
 ```
 
-+ server.js              //server bootstrap
++ server.js              //Server bootstrap
   |
-  - app                  //server
+  - app                  //Server
   | + index.js           //Server instantiation, event registration
   | + routes.js          //URI routing configuration
   | + environment.js     //App setting for different environments
@@ -45,14 +45,13 @@ Implementation Notes:
   | - sevice
   |   + Messenger.js     //Wrapper to Twilio SMS agent
   |
-  - public
+  - public               //Client side artifacts
   | + index.jade         //Layout and directives for SPA
   | - js
   |   + task.js          //Angular controller and factory
-  |   + lib/**           //3rd party JS modules
   | - css
   |   + task.styl        //Custom styling
-  |   + lib/**           //3rd party CSS library
+  | - lib/**             //3rd party libraries
   |
   - test
   | + test-server.js     //Mocha API test
