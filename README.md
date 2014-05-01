@@ -77,7 +77,7 @@ PUT | /task/:id/reset | Mark the task referenced by id as incomplete | 200: succ
 
 ###1.1.0 (4/30/2014)
 - Upgraded to ionic version 1.0.9.
-- Test pass on following platforms:
+- Test pass on the following platforms:
   - Desktop: Chrome, Firefox and Safari
   - Android: Chrome
   - iPhone: Safari
