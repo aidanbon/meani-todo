@@ -28,13 +28,13 @@
     "nib": "~1.0.2",
     "gulp": "~3.6.2",
     "connect-livereload": "~0.4.0",
+    "tiny-lr": "0.0.7",
     "morgan": "~1.0.0"
   },
   "devDependencies": {
     "superagent": "~0.17.0",
     "expect": "~0.1.1",
-    "mocha": "~1.18.2",
-    "tiny-lr": "0.0.7"
+    "mocha": "~1.18.2"
   },
   "engines": {
     "node": "0.10.x"
