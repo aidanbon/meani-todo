@@ -1,10 +1,10 @@
 {
   "name": "meani-todo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A full stack implementation of a to-do list app with MongoDB, Express, AngularJS, Node and Ionic (MEANI)",
   "main": "server.js",
   "scripts": {
-    "start" : "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production gulp",
     "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha ./test/test-server.js"
   },
   "keywords": [
@@ -31,7 +31,10 @@
   "devDependencies": {
     "superagent": "~0.17.0",
     "expect": "~0.1.1",
-    "mocha": "~1.18.2"
+    "mocha": "~1.18.2",
+    "gulp": "~3.6.2",
+    "connect-livereload": "~0.4.0",
+    "tiny-lr": "0.0.7"
   },
   "engines": {
     "node": "0.10.x"

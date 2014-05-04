@@ -29,7 +29,7 @@ module.exports = function (app) {
 
     //frontend setting
     function compileWithNib(str, path) {
-        console.log("------ stylus compile: str: %s path: %s", str, path);
+        //console.log("------ stylus compile: str: %s path: %s", str, path);
         return stylus(str)
             .set("filename", path)
             .use(nib());
@@ -40,5 +40,10 @@ module.exports = function (app) {
         src: publicDir,
         compile: compileWithNib
         }));
+    if (env === "development") {
+        //enable live refresh changes of client files during development
+        app.use(require('connect-livereload')());
+        console.log("Enable live reload...");
+    }
     app.use(express.static(publicDir));
 };

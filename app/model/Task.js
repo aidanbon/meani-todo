@@ -12,8 +12,8 @@ var mongoskin = require("mongoskin"),
  */
 var Task = function (app) {
     events.EventEmitter.call(this);
-	this.db = mongoskin.db("mongodb://" + app.get("dbURL"));
-	this.db.bind("task");
+	  this.db = mongoskin.db("mongodb://" + app.get("dbURL"));
+	  this.db.bind("task");
     console.log("Established monogodb://" + app.get("dbURL"));
 };
 

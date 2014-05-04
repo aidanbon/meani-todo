@@ -74,6 +74,9 @@ PUT | /task/:id/reset | Mark the task referenced by id as incomplete | 200: succ
 
 ##Change log
 
+###1.1.1 (5/4/2014)
+- Use Gulp to manage server with live reload at development mode
+
 ###1.1.0 (4/30/2014)
 - Upgraded to ionic version 1.0.9.
 - Test pass on the following platforms:
