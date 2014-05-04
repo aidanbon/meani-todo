@@ -25,7 +25,8 @@ MEANI-todo
   - Copy app/configs-sample.js to app/configs.js
   - Customize your setting at app/configs.js
   - $ npm install
-  - $ node server.js
+  - $ gulp
+  2. Point your web browser to http://localhost:9999
 
 Implementation Notes:
 ---------------------
@@ -33,7 +34,7 @@ Implementation Notes:
 ### File Overview:
 ```
 
-+ server.js              //Server bootstrap
++ Gulpfile.js            //App runner script
   |
   - app                  //Server
   | + index.js           //Server instantiation, event registration
