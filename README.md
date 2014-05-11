@@ -20,6 +20,10 @@ MEANI-todo
 
 > :octocat:  **Live Demo**: http://meani-todo.herokuapp.com
 
+### Expore the code:
+[![Show me a Demo at Codio](https://codio-public.s3.amazonaws.com/sharing/demo-in-ide.png)](https://codio.com/aidanbon/MEANI-todo)
+
+
 ### To run the app locally:
   1. Clone this repo
   - Copy app/configs-sample.js to app/configs.js
